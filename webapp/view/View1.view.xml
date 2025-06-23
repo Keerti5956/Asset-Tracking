@@ -1,0 +1,49 @@
+<mvc:View
+    controllerName="app.project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout.form"
+    displayBlock="true">
+
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <layout:SimpleForm
+                id="simpleFormId"
+                layout="ResponsiveGridLayout"
+                editable="true"
+                labelSpanL="3"
+                labelSpanM="3"
+                emptySpanL="4"
+                emptySpanM="4"
+                columnsL="1"
+                columnsM="1"
+                class="sapUiSmallMargin">
+
+                <core:Title text="Equipment Details" />
+                <HBox alignItems="Center">
+                        <items>
+                        <core:Icon src="sap-icon://technical-object" size="1.3rem" color="black" />
+                        <Text text="Equipment Number" class="sapUiTinyMarginBegin" />
+                    </items>
+                    </HBox>
+                  <Input id="equipId" placeholder="Enter Equipment ID" />
+
+            </layout:SimpleForm>
+        </content>
+
+        <footer>
+            <Bar>
+                <contentMiddle>
+                <HBox alignItems="Center" justifyContent="Center" class="fioriCustomButton">
+                        <Button text="Execute"
+                            icon="sap-icon://search"
+                            type="Emphasized"
+                            press="onExecute"
+                            class="customBlueButton" />
+                    </HBox>
+                </contentMiddle>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

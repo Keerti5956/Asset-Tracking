@@ -1,0 +1,99 @@
+<mvc:View xmlns:form="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    controllerName="app.project1.controller.detailView">
+
+    <Page title="Asset Tracing">
+        <Toolbar>
+            <Button text="Back" icon="sap-icon://nav-back" press="view2ToView1" />
+        </Toolbar>
+
+        <form:SimpleForm id="AssetForm"
+            layout="ResponsiveGridLayout"
+            editable="true"
+            labelSpanL="3" labelSpanM="3"
+            adjustLabelSpan="false"
+            emptySpanL="4" emptySpanM="4"
+            columnsL="1" columnsM="1">
+            <form:content>
+                <VBox>
+                    <HBox alignItems="Center">
+                        <items>
+                            <core:Icon src="sap-icon://technical-object" size="1.5rem" color="black" />
+                            <Text text="Equipment Number" class="sapUiTinyMarginBegin" />
+                        </items>
+                    </HBox>
+                    <Input id="equipmentId" required="true" liveChange="onLiveChange" />
+
+                    <HBox alignItems="Center">
+                        <items>
+                            <core:Icon src="sap-icon://document-text" size="1.5rem" color="black" />
+                            <Text text="Equipment Description" class="sapUiTinyMarginBegin" />
+                        </items>
+                    </HBox>
+                    <Input id="equipmentDesc" editable="false" value="Stabilizer,MDLR,ASY" required="true" liveChange="onLiveChange" />
+
+                    <HBox alignItems="Center">
+                        <items>
+                            <core:Icon src="sap-icon://group" size="1.5rem" color="black" />
+                            <Text text="Group/Function" class="sapUiTinyMarginBegin" />
+                        </items>
+                    </HBox>
+                    <ComboBox id="comboBox" required="true" width="100%" selectionChange="onSelectionChange">
+                        <items>
+                            <core:Item key="grp1" text="Mechanical" />
+                            <core:Item key="grp2" text="Electrical" />
+                            <core:Item key="grp3" text="Plumbing" />
+                        </items>
+                    </ComboBox>
+
+                    <HBox alignItems="Center">
+                        <items>
+                            <core:Icon src="sap-icon://information" size="1.5rem" color="black" />
+                            <Text text="Equipment Status" class="sapUiTinyMarginBegin" />
+                        </items>
+                    </HBox>
+                    <ComboBox id="comboBox1" required="true" width="100%" selectionChange="onSelectionChange">
+                        <items>
+                            <core:Item key="active" text="Active" />
+                            <core:Item key="inactive" text="Inactive" />
+                            <core:Item key="maintenance" text="Under Maintenance" />
+                        </items>
+                    </ComboBox>
+
+                    <HBox alignItems="Center">
+                        <items>
+                            <core:Icon src="sap-icon://functional-location" size="1.5rem" color="black" />
+                            <Text text="Room" class="sapUiTinyMarginBegin" />
+                        </items>
+                    </HBox>
+                    <Input id="room" required="true" liveChange="onLiveChange" />
+
+                    <HBox alignItems="Center">
+                        <items>
+                            <core:Icon src="sap-icon://blank-tag" size="1.5rem" color="black" />
+                            <Text text="Sort Field" class="sapUiTinyMarginBegin" />
+                        </items>
+                    </HBox>
+                    <Input id="sortField" required="true" liveChange="onLiveChange" />
+                </VBox>
+            </form:content>
+        </form:SimpleForm>
+
+        <footer>
+            <Bar class="customFooter">
+                <contentMiddle>
+                    <HBox alignItems="Center" justifyContent="Center" class="fioriCustomButton">
+                        <Button text="Save"
+                            icon="sap-icon://save"
+                            type="Emphasized"
+                            press="onSave"
+                            class="customBlueButton" />
+                    </HBox>
+                </contentMiddle>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>
