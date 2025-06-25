@@ -33,17 +33,19 @@
         </content>
 
         <footer>
-            <Bar>
-                <contentMiddle>
-                <HBox alignItems="Center" justifyContent="Center" class="fioriCustomButton">
+            <Toolbar>
+                <ToolbarSpacer />
+                <!-- <HBox alignItems="Center" justifyContent="Center" class="fioriCustomButton"> -->
                         <Button text="Execute"
+                            id="btnId"
                             icon="sap-icon://search"
                             type="Emphasized"
                             press="onExecute"
-                            class="customBlueButton" />
-                    </HBox>
-                </contentMiddle>
-            </Bar>
+                            class="customBlueButton"/>
+                            
+ 
+                    <!-- </HBox> -->
+            </Toolbar>
         </footer>
     </Page>
 </mvc:View>

@@ -5,9 +5,18 @@ sap.ui.define([
     "use strict";
 
     return Controller.extend("app.project1.controller.detailView", {
-        onInit() {
-            this.oRouter = this.getOwnerComponent().getRouter();
-        },
+            onInit() {
+                this.oRouter = this.getOwnerComponent().getRouter();
+                this.oRouter.getRoute("RouteDetail").attachPatternMatched(this._onObjectMatched, this);
+            },
+
+            _onObjectMatched: function (oEvent) {
+                var sEquipId = oEvent.getParameter("arguments").equipId;
+                this.byId("equipmentId").setValue(sEquipId);
+            },
+            
+            
+        
 
         view2ToView1: function () {
             this.oRouter.navTo("RouteView1");
@@ -40,6 +49,15 @@ sap.ui.define([
                 MessageToast.show("Saved successfully!");
             } else {
                 MessageToast.show("Please fill in all required fields.");
+            }
+        },
+        onAfterRendering: function () {
+            //var oButton = this.getView().byId("btnId");
+            if (sap.ui.Device.system.phone){
+                this.getView().byId("buttonId").setWidth("100%");
+            }
+            else{
+                 this.getView().byId("buttonId").setWidth("");
             }
         }
     });

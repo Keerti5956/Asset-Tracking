@@ -83,17 +83,17 @@
         </form:SimpleForm>
 
         <footer>
-            <Bar class="customFooter">
-                <contentMiddle>
-                    <HBox alignItems="Center" justifyContent="Center" class="fioriCustomButton">
-                        <Button text="Save"
-                            icon="sap-icon://save"
-                            type="Emphasized"
-                            press="onSave"
-                            class="customBlueButton" />
-                    </HBox>
-                </contentMiddle>
-            </Bar>
-        </footer>
+    <Toolbar>
+                <ToolbarSpacer />
+            <Button
+                id="buttonId"
+                text="Save"
+                icon="sap-icon://save"
+                type="Emphasized"
+                press="onSave"
+                class="customBlueButton" />
+       </Toolbar>
+</footer>
+
     </Page>
 </mvc:View>

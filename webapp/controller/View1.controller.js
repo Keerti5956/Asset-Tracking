@@ -26,23 +26,29 @@ sap.ui.define([
         },
 
         onAfterRendering: function () {
-            var oButton = this.byId("btnId");
-            if (oButton) {
-                var oDomRef = oButton.getDomRef();
-                if (Device.system.phone) {
-                    oButton.setWidth("100px");
-                    // oButton.setText("EXECUTED");
-
-                    if (oDomRef) {
-                        oDomRef.style.fontFamily = "Arial, sans-serif";
-                        oDomRef.style.fontStyle = "italic";
-                        oDomRef.style.fontWeight = "bold";
-                    }
-                } else {
-                    oButton.setWidth("300px");
-                    
-                } 
+            //var oButton = this.getView().byId("btnId");
+            if (sap.ui.Device.system.phone){
+                this.getView().byId("btnId").setWidth("100%");
             }
+            else{
+                 this.getView().byId("btnId").setWidth("");
+            }
+            // if (oButton) {
+            //     var oDomRef = oButton.getDomRef();
+            //     if (Device.system.phone) {
+            //         oButton.setWidth("100px");
+            //         // oButton.setText("EXECUTED");
+
+            //         if (oDomRef) {
+            //             oDomRef.style.fontFamily = "Arial, sans-serif";
+            //             oDomRef.style.fontStyle = "italic";
+            //             oDomRef.style.fontWeight = "bold";
+            //         }
+            //     } else {
+            //         oButton.setWidth("300px");
+                    
+            //     } 
+            // }
         }
     });
 });
